@@ -1,0 +1,104 @@
+/* ===== Colores (variables). El modo oscuro las cambia ===== */
+:root {
+  --fondo: #f5f7fb;
+  --tarjeta: #ffffff;
+  --texto: #1f2937;
+  --suave: #6b7280;
+  --primario: #2563eb;
+  --primario-hover: #1d4ed8;
+  --borde: #e5e7eb;
+  --acento: #f59e0b;
+}
+body.oscuro {
+  --fondo: #111827;
+  --tarjeta: #1f2937;
+  --texto: #f3f4f6;
+  --suave: #9ca3af;
+  --borde: #374151;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { line-height: 1.2; }
+
+/* ===== Cabecera y menú ===== */
+.cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 5%; background: var(--primario); color: #fff; position: sticky; top: 0; z-index: 10; }
+.logo { color: #fff; font-weight: bold; font-size: 1.3rem; text-decoration: none; }
+#menu { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+#menu a { color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 20px; transition: background .2s; }
+#menu a:hover, #menu a.activo { background: rgba(255,255,255,.25); }
+.btn-modo { background: transparent; color: #fff; border: 1px solid #fff; border-radius: 20px; padding: 6px 12px; cursor: pointer; }
+.btn-modo:hover { background: rgba(255,255,255,.2); }
+
+main { max-width: 1100px; margin: 0 auto; padding: 20px 5%; }
+.bloque { margin: 30px 0; }
+
+/* ===== Botones ===== */
+.boton { display: inline-block; background: var(--primario); color: #fff; padding: 10px 20px; border: none; border-radius: 8px; text-decoration: none; font-size: 1rem; cursor: pointer; transition: transform .2s, background .2s; }
+.boton:hover { background: var(--primario-hover); transform: translateY(-2px); }
+.boton-claro { background: transparent; color: var(--primario); border: 2px solid var(--primario); }
+.boton-claro:hover { background: var(--primario); color: #fff; }
+
+/* ===== Inicio ===== */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; margin-top: 20px; }
+.hero h1 { font-size: 2.6rem; margin: 0 0 10px; }
+.hero img { border-radius: 16px; }
+.hero .boton { margin: 6px 6px 0 0; }
+.destacado { background: var(--tarjeta); border-left: 6px solid var(--acento); padding: 20px 25px; border-radius: 10px; }
+.lista { padding-left: 22px; }
+
+/* ===== Tarjetas (Grid) ===== */
+.rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 18px; transition: transform .2s, box-shadow .2s; }
+.tarjeta:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+.tarjeta img { border-radius: 8px; margin-bottom: 10px; }
+.tarjeta h3 { margin-top: 0; }
+
+/* ===== Calculadora ===== */
+.calc-zona { display: grid; grid-template-columns: 340px 1fr; gap: 25px; align-items: start; }
+.calculadora { background: #1f2937; border-radius: 16px; padding: 18px; box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+.operacion { color: #9ca3af; min-height: 1.4em; margin: 0; text-align: right; }
+.pantalla { background: #111827; color: #fff; font-size: 2.2rem; text-align: right; padding: 12px; border-radius: 8px; margin-bottom: 14px; overflow-x: auto; white-space: nowrap; }
+.teclas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.tecla { font-size: 1.3rem; padding: 14px 0; border: none; border-radius: 8px; background: #374151; color: #fff; cursor: pointer; transition: background .15s, transform .1s; }
+.tecla:hover { background: #4b5563; }
+.tecla:active { transform: scale(.95); }
+.tecla-op { background: var(--primario); }
+.tecla-op:hover { background: var(--primario-hover); }
+.tecla-esp { background: #6b7280; }
+.tecla-igual { background: var(--acento); grid-row: span 2; }
+.tecla-igual:hover { background: #d97706; }
+.tecla-cero { grid-column: span 2; }
+.caja-dato { background: var(--tarjeta); border: 1px solid var(--borde); border-left: 6px solid var(--acento); border-radius: 12px; padding: 20px; }
+.caja-dato h2 { margin-top: 0; }
+.etiqueta { color: var(--primario); font-weight: bold; margin: 0 0 6px; }
+#dato-texto { font-size: 1.2rem; }
+.caja-dato.nuevo { animation: aparecer .5s; }
+@keyframes aparecer { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ===== Formulario ===== */
+.formulario { max-width: 600px; background: var(--tarjeta); border: 1px solid var(--borde); padding: 25px; border-radius: 12px; }
+.campo { margin-bottom: 16px; }
+.campo label { display: block; font-weight: bold; margin-bottom: 4px; }
+.campo input[type="text"], .campo select, .campo textarea { width: 100%; padding: 10px; border: 1px solid var(--borde); border-radius: 8px; font: inherit; background: var(--fondo); color: var(--texto); }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: 2px solid var(--primario); }
+.campo .check { font-weight: normal; }
+.error { display: block; color: #dc2626; font-size: .9rem; min-height: 1.2em; }
+.contador { display: block; text-align: right; color: var(--suave); font-size: .85rem; }
+.resultado { font-weight: bold; }
+.resultado.ok { color: #16a34a; }
+.campo-mal { border-color: #dc2626 !important; }
+
+/* ===== Pie ===== */
+.pie { text-align: center; padding: 20px; margin-top: 40px; background: var(--tarjeta); border-top: 1px solid var(--borde); color: var(--suave); }
+
+/* ===== Responsive: tablet y móvil ===== */
+@media (max-width: 800px) {
+  .hero, .calc-zona { grid-template-columns: 1fr; }
+  .calculadora { max-width: 400px; margin: 0 auto; width: 100%; }
+}
+@media (max-width: 500px) {
+  .hero h1 { font-size: 2rem; }
+  .cabecera { justify-content: center; }
+}

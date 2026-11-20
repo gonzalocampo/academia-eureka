@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora | Academia Eureka</title>
+		<link rel="stylesheet" href="/academia/css/style.css" />
+		<script src="/academia/javascript/script.js" defer></script>
+		<script src="/academia/javascript/datos-curiosos-1.js" defer></script>
+		<script src="/academia/javascript/datos-curiosos-2.js" defer></script>
+		<script src="/academia/javascript/datos-curiosos-3.js" defer></script>
+		<script src="/academia/javascript/datos-curiosos-4.js" defer></script>
+		<script src="/academia/javascript/datos-curiosos-6-al-10.js" defer></script>
+		<script src="/academia/javascript/calculadora.js" defer></script>
+	</head>
+	<body>
+		<!-- Cabecera: el menú se rellena desde javascript/script.js -->
+		<header class="cabecera">
+			<a class="logo" href="/academia/index.html">🔬 Academia Eureka</a>
+			<nav><ul id="menu"></ul></nav>
+			<button id="btn-modo" class="btn-modo" type="button">🌙 Modo oscuro</button>
+		</header>
+
+		<main>
+			<section class="bloque">
+				<h1>Calculadora de datos curiosos</h1>
+				<p>Haz una operación y, si el resultado es un número entero del 1 al 5000, ¡te contamos un dato curioso de ciencia!</p>
+			</section>
+
+			<section class="calc-zona">
+				<article class="calculadora">
+					<p id="operacion" class="operacion"></p>
+					<div id="pantalla" class="pantalla">0</div>
+					<div class="teclas">
+						<button type="button" class="tecla tecla-esp" data-tipo="limpiar">C</button>
+						<button type="button" class="tecla tecla-esp" data-tipo="borrar">⌫</button>
+						<button type="button" class="tecla tecla-op" data-tipo="op">÷</button>
+						<button type="button" class="tecla tecla-op" data-tipo="op">×</button>
+						<button type="button" class="tecla" data-tipo="num">7</button>
+						<button type="button" class="tecla" data-tipo="num">8</button>
+						<button type="button" class="tecla" data-tipo="num">9</button>
+						<button type="button" class="tecla tecla-op" data-tipo="op">−</button>
+						<button type="button" class="tecla" data-tipo="num">4</button>
+						<button type="button" class="tecla" data-tipo="num">5</button>
+						<button type="button" class="tecla" data-tipo="num">6</button>
+						<button type="button" class="tecla tecla-op" data-tipo="op">+</button>
+						<button type="button" class="tecla" data-tipo="num">1</button>
+						<button type="button" class="tecla" data-tipo="num">2</button>
+						<button type="button" class="tecla" data-tipo="num">3</button>
+						<button type="button" class="tecla tecla-igual" data-tipo="igual">=</button>
+						<button type="button" class="tecla tecla-cero" data-tipo="num">0</button>
+						<button type="button" class="tecla" data-tipo="num">.</button>
+					</div>
+				</article>
+
+				<article class="caja-dato" id="caja-dato">
+					<h2>Dato curioso</h2>
+					<p id="dato-etiqueta" class="etiqueta"></p>
+					<p id="dato-texto">Todavía no hay resultado. Prueba con 6 × 7.</p>
+				</article>
+			</section>
+
+			<section class="bloque">
+				<h2>Cómo usarla</h2>
+				<ol class="lista">
+					<li>Pulsa números y una operación (+, −, ×, ÷).</li>
+					<li>Pulsa = para ver el resultado.</li>
+					<li>Si el resultado es un entero entre 1 y 5000, aparece su dato curioso.</li>
+					<li>Pulsa C para empezar de nuevo o ⌫ para borrar la última cifra.</li>
+				</ol>
+			</section>
+		</main>
+
+		<footer class="pie">
+			<p>© 2026 Academia Eureka · Aprender es descubrir · info@academiaeureka.example</p>
+		</footer>
+	</body>
+</html>

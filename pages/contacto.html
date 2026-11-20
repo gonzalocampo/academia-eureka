@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contacto | Academia Eureka</title>
+		<link rel="stylesheet" href="/academia/css/style.css" />
+		<script src="/academia/javascript/script.js" defer></script>
+	</head>
+	<body>
+		<!-- Cabecera: el menú se rellena desde javascript/script.js -->
+		<header class="cabecera">
+			<a class="logo" href="/academia/index.html">🔬 Academia Eureka</a>
+			<nav><ul id="menu"></ul></nav>
+			<button id="btn-modo" class="btn-modo" type="button">🌙 Modo oscuro</button>
+		</header>
+
+		<main>
+			<section class="bloque">
+				<h1>Contacto</h1>
+				<p>¿Tienes dudas sobre algún programa? Escríbenos y te respondemos en 24 horas.</p>
+			</section>
+			<section class="bloque">
+				<form id="formulario" class="formulario" novalidate>
+					<div class="campo">
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" placeholder="Tu nombre" />
+						<span class="error" id="error-nombre"></span>
+					</div>
+					<div class="campo">
+						<label for="email">Email</label>
+						<input type="text" id="email" placeholder="tucorreo@ejemplo.com" />
+						<span class="error" id="error-email"></span>
+					</div>
+					<div class="campo">
+						<label for="telefono">Teléfono</label>
+						<input type="text" id="telefono" placeholder="612345678" />
+						<span class="error" id="error-telefono"></span>
+					</div>
+					<div class="campo">
+						<label for="motivo">Motivo de contacto</label>
+						<select id="motivo">
+							<option value="">Selecciona un motivo</option>
+							<option>Información de programas</option>
+							<option>Matrícula</option>
+							<option>Precios</option>
+							<option>Otro</option>
+						</select>
+						<span class="error" id="error-motivo"></span>
+					</div>
+					<div class="campo">
+						<label for="mensaje">Mensaje (mínimo 20 caracteres)</label>
+						<textarea id="mensaje" rows="5" maxlength="300" placeholder="Cuéntanos qué necesitas"></textarea>
+						<span class="contador" id="contador">0 / 300</span>
+						<span class="error" id="error-mensaje"></span>
+					</div>
+					<div class="campo">
+						<label class="check"><input type="checkbox" id="acepto" /> Acepto la política de privacidad</label>
+						<span class="error" id="error-acepto"></span>
+					</div>
+					<button class="boton" type="submit">Enviar</button>
+					<p id="resultado" class="resultado"></p>
+				</form>
+			</section>
+		</main>
+
+		<footer class="pie">
+			<p>© 2026 Academia Eureka · Aprender es descubrir · info@academiaeureka.example</p>
+		</footer>
+	</body>
+</html>
